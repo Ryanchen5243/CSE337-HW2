@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require "Open3"
 require_relative 'array'
 require_relative 'rgrep'
+require_relative 'vehicle'
 
 class TestCases < Minitest::Test
   # Array Test Cases
@@ -143,6 +144,8 @@ class TestCases < Minitest::Test
     output, status = Open3.capture2("ruby", "rgrep.rb", "test.txt", "\\d\\d")
     assert_equal "101 broad road\n101 broad lane\n102 high road\n234 Johnson Street\nLyndhurst Pl 224\n", output
   end
+
+  # contains virus test cases
 
   private
   def setup_test_rgrep_txt_file
